@@ -5,44 +5,100 @@
       "items": [
         {
           "id": "r1",
-          "src": "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=400&q=70",
-          "caption": "Renovasi Rumah Minimalis - Surabaya Barat",
+          "src": "images/gallery/renovasi/r1.jpeg",
+          "thumb": "images/gallery/renovasi/r1.jpeg",
+          "caption": "Bangun & Renovasi - Surabaya",
           "category": "renovasi"
         },
         {
           "id": "r2",
-          "src": "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=400&q=70",
-          "caption": "Pembangunan Ruko 2 Lantai - Surabaya",
+          "src": "images/gallery/renovasi/r2.jpeg",
+          "thumb": "images/gallery/renovasi/r2.jpeg",
+          "caption": "Bangun & Renovasi - Surabaya",
           "category": "renovasi"
         },
         {
           "id": "r3",
-          "src": "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=400&q=70",
-          "caption": "Renovasi Fasad Rumah Modern - Surabaya",
+          "src": "images/gallery/renovasi/r3.jpeg",
+          "thumb": "images/gallery/renovasi/r3.jpeg",
+          "caption": "Bangun & Renovasi - Surabaya",
           "category": "renovasi"
         },
         {
           "id": "r4",
-          "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=70",
-          "caption": "Pengerjaan Dinding Eksterior - Surabaya",
+          "src": "images/gallery/renovasi/r4.jpeg",
+          "thumb": "images/gallery/renovasi/r4.jpeg",
+          "caption": "Bangun & Renovasi - Surabaya",
           "category": "renovasi"
         },
         {
           "id": "r5",
-          "src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=70",
-          "caption": "Bangun Rumah Type 60 - Surabaya Selatan",
+          "src": "images/gallery/renovasi/r5.jpeg",
+          "thumb": "images/gallery/renovasi/r5.jpeg",
+          "caption": "Bangun & Renovasi - Surabaya",
           "category": "renovasi"
         },
         {
           "id": "r6",
-          "src": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&q=70",
-          "caption": "Renovasi Total Rumah - Surabaya Timur",
+          "src": "images/gallery/renovasi/r6.jpeg",
+          "thumb": "images/gallery/renovasi/r6.jpeg",
+          "caption": "Bangun & Renovasi - Surabaya",
+          "category": "renovasi"
+        },
+        {
+          "id": "r7",
+          "src": "images/gallery/renovasi/r7.jpeg",
+          "thumb": "images/gallery/renovasi/r7.jpeg",
+          "caption": "Bangun & Renovasi - Surabaya",
+          "category": "renovasi"
+        },
+        {
+          "id": "r8",
+          "src": "images/gallery/renovasi/r8.jpeg",
+          "thumb": "images/gallery/renovasi/r8.jpeg",
+          "caption": "Bangun & Renovasi - Surabaya",
+          "category": "renovasi"
+        },
+        {
+          "id": "r9",
+          "src": "images/gallery/renovasi/r9.jpeg",
+          "thumb": "images/gallery/renovasi/r9.jpeg",
+          "caption": "Bangun & Renovasi - Surabaya",
+          "category": "renovasi"
+        },
+        {
+          "id": "r10",
+          "src": "images/gallery/renovasi/r10.jpeg",
+          "thumb": "images/gallery/renovasi/r10.jpeg",
+          "caption": "Bangun & Renovasi - Surabaya",
+          "category": "renovasi"
+        },
+        {
+          "id": "r11",
+          "src": "images/gallery/renovasi/r11.jpeg",
+          "thumb": "images/gallery/renovasi/r11.jpeg",
+          "caption": "Bangun & Renovasi - Surabaya",
+          "category": "renovasi"
+        },
+        {
+          "id": "r12",
+          "src": "images/gallery/renovasi/r12.jpeg",
+          "thumb": "images/gallery/renovasi/r12.jpeg",
+          "caption": "Bangun & Renovasi - Surabaya",
+          "category": "renovasi"
+        },
+        {
+          "id": "r13",
+          "src": "images/gallery/renovasi/r13.jpeg",
+          "thumb": "images/gallery/renovasi/r13.jpeg",
+          "caption": "Bangun & Renovasi - Surabaya",
+          "category": "renovasi"
+        },
+        {
+          "id": "r14",
+          "src": "images/gallery/renovasi/r14.jpeg",
+          "thumb": "images/gallery/renovasi/r14.jpeg",
+          "caption": "Bangun & Renovasi - Surabaya",
           "category": "renovasi"
         }
       ]
@@ -52,78 +108,108 @@
       "items": [
         {
           "id": "i1",
-          "src": "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=400&q=70",
-          "caption": "Design Ruang Tamu Modern - Surabaya",
+          "src": "images/gallery/interior/i1.jpeg",
+          "thumb": "images/gallery/interior/i1.jpeg",
+          "caption": "Design Interior & Mebel - Surabaya",
           "category": "interior"
         },
         {
           "id": "i2",
-          "src": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=70",
-          "caption": "Custom Sofa & Furniture Ruang Keluarga",
+          "src": "images/gallery/interior/i2.jpeg",
+          "thumb": "images/gallery/interior/i2.jpeg",
+          "caption": "Design Interior & Mebel - Surabaya",
           "category": "interior"
         },
         {
           "id": "i3",
-          "src": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=70",
-          "caption": "Kitchen Set Custom - Dapur Minimalis",
+          "src": "images/gallery/interior/i3.jpeg",
+          "thumb": "images/gallery/interior/i3.jpeg",
+          "caption": "Design Interior & Mebel - Surabaya",
           "category": "interior"
         },
         {
           "id": "i4",
-          "src": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=400&q=70",
-          "caption": "Design Kamar Tidur Elegan - Surabaya",
+          "src": "images/gallery/interior/i4.jpeg",
+          "thumb": "images/gallery/interior/i4.jpeg",
+          "caption": "Design Interior & Mebel - Surabaya",
           "category": "interior"
         },
         {
           "id": "i5",
-          "src": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=70",
-          "caption": "Lemari Custom Minimalis - Surabaya",
+          "src": "images/gallery/interior/i5.jpeg",
+          "thumb": "images/gallery/interior/i5.jpeg",
+          "caption": "Design Interior & Mebel - Surabaya",
           "category": "interior"
         },
         {
           "id": "i6",
-          "src": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=70",
-          "caption": "Meja Makan & Kursi Custom - Surabaya",
+          "src": "images/gallery/interior/i6.jpeg",
+          "thumb": "images/gallery/interior/i6.jpeg",
+          "caption": "Design Interior & Mebel - Surabaya",
           "category": "interior"
-        }
-      ]
-    },
-    "inspeksi": {
-      "label": "Jasa Inspeksi Rumah",
-      "items": [
-        {
-          "id": "ins1",
-          "src": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=70",
-          "caption": "Inspeksi Kondisi Atap & Struktur Rumah",
-          "category": "inspeksi"
         },
         {
-          "id": "ins2",
-          "src": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=70",
-          "caption": "Pengecekan Instalasi Listrik & Pipa",
-          "category": "inspeksi"
+          "id": "i7",
+          "src": "images/gallery/interior/i7.jpeg",
+          "thumb": "images/gallery/interior/i7.jpeg",
+          "caption": "Design Interior & Mebel - Surabaya",
+          "category": "interior"
         },
         {
-          "id": "ins3",
-          "src": "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=400&q=70",
-          "caption": "Inspeksi Finishing & Kebocoran Dinding",
-          "category": "inspeksi"
+          "id": "i8",
+          "src": "images/gallery/interior/i8.jpeg",
+          "thumb": "images/gallery/interior/i8.jpeg",
+          "caption": "Design Interior & Mebel - Surabaya",
+          "category": "interior"
         },
         {
-          "id": "ins4",
-          "src": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=70",
-          "caption": "Laporan Inspeksi & Estimasi Perbaikan",
-          "category": "inspeksi"
+          "id": "i9",
+          "src": "images/gallery/interior/i9.jpeg",
+          "thumb": "images/gallery/interior/i9.jpeg",
+          "caption": "Design Interior & Mebel - Surabaya",
+          "category": "interior"
+        },
+        {
+          "id": "i10",
+          "src": "images/gallery/interior/i10.jpeg",
+          "thumb": "images/gallery/interior/i10.jpeg",
+          "caption": "Design Interior & Mebel - Surabaya",
+          "category": "interior"
+        },
+        {
+          "id": "i11",
+          "src": "images/gallery/interior/i11.jpeg",
+          "thumb": "images/gallery/interior/i11.jpeg",
+          "caption": "Design Interior & Mebel - Surabaya",
+          "category": "interior"
+        },
+        {
+          "id": "i12",
+          "src": "images/gallery/interior/i12.jpeg",
+          "thumb": "images/gallery/interior/i12.jpeg",
+          "caption": "Design Interior & Mebel - Surabaya",
+          "category": "interior"
+        },
+        {
+          "id": "i13",
+          "src": "images/gallery/interior/i13.jpeg",
+          "thumb": "images/gallery/interior/i13.jpeg",
+          "caption": "Design Interior & Mebel - Surabaya",
+          "category": "interior"
+        },
+        {
+          "id": "i14",
+          "src": "images/gallery/interior/i14.jpeg",
+          "thumb": "images/gallery/interior/i14.jpeg",
+          "caption": "Design Interior & Mebel - Surabaya",
+          "category": "interior"
+        },
+        {
+          "id": "i15",
+          "src": "images/gallery/interior/i15.jpeg",
+          "thumb": "images/gallery/interior/i15.jpeg",
+          "caption": "Design Interior & Mebel - Surabaya",
+          "category": "interior"
         }
       ]
     },
@@ -132,37 +218,107 @@
       "items": [
         {
           "id": "p1",
-          "src": "https://images.unsplash.com/photo-1545183930-9a0c51e16e61?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1545183930-9a0c51e16e61?w=400&q=70",
-          "caption": "Canopy Baja Ringan Modern - Surabaya",
+          "src": "images/gallery/produk/p1.jpeg",
+          "thumb": "images/gallery/produk/p1.jpeg",
+          "caption": "Produk Interior & Eksterior - Surabaya",
           "category": "produk"
         },
         {
           "id": "p2",
-          "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=70",
-          "caption": "Pagar Besi & Stainless Custom - Surabaya",
+          "src": "images/gallery/produk/p2.jpeg",
+          "thumb": "images/gallery/produk/p2.jpeg",
+          "caption": "Produk Interior & Eksterior - Surabaya",
           "category": "produk"
         },
         {
           "id": "p3",
-          "src": "https://images.unsplash.com/photo-1604079628040-94301bb21b91?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1604079628040-94301bb21b91?w=400&q=70",
-          "caption": "Pintu & Jendela Aluminium Minimalis",
+          "src": "images/gallery/produk/p3.jpeg",
+          "thumb": "images/gallery/produk/p3.jpeg",
+          "caption": "Produk Interior & Eksterior - Surabaya",
           "category": "produk"
         },
         {
           "id": "p4",
-          "src": "https://images.unsplash.com/photo-1560185007-5f0bb1866cab?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1560185007-5f0bb1866cab?w=400&q=70",
-          "caption": "Gorden & Vertical Blind - Surabaya",
+          "src": "images/gallery/produk/p4.jpeg",
+          "thumb": "images/gallery/produk/p4.jpeg",
+          "caption": "Produk Interior & Eksterior - Surabaya",
           "category": "produk"
         },
         {
           "id": "p5",
-          "src": "https://images.unsplash.com/photo-1561736778-92e52a7769ef?w=800&q=80",
-          "thumb": "https://images.unsplash.com/photo-1561736778-92e52a7769ef?w=400&q=70",
-          "caption": "Kasa Nyamuk Aluminium & Fiberglass",
+          "src": "images/gallery/produk/p5.jpeg",
+          "thumb": "images/gallery/produk/p5.jpeg",
+          "caption": "Produk Interior & Eksterior - Surabaya",
+          "category": "produk"
+        },
+        {
+          "id": "p6",
+          "src": "images/gallery/produk/p6.jpeg",
+          "thumb": "images/gallery/produk/p6.jpeg",
+          "caption": "Produk Interior & Eksterior - Surabaya",
+          "category": "produk"
+        },
+        {
+          "id": "p7",
+          "src": "images/gallery/produk/p7.jpeg",
+          "thumb": "images/gallery/produk/p7.jpeg",
+          "caption": "Produk Interior & Eksterior - Surabaya",
+          "category": "produk"
+        },
+        {
+          "id": "p8",
+          "src": "images/gallery/produk/p8.jpeg",
+          "thumb": "images/gallery/produk/p8.jpeg",
+          "caption": "Produk Interior & Eksterior - Surabaya",
+          "category": "produk"
+        },
+        {
+          "id": "p9",
+          "src": "images/gallery/produk/p9.jpeg",
+          "thumb": "images/gallery/produk/p9.jpeg",
+          "caption": "Produk Interior & Eksterior - Surabaya",
+          "category": "produk"
+        },
+        {
+          "id": "p10",
+          "src": "images/gallery/produk/p10.jpeg",
+          "thumb": "images/gallery/produk/p10.jpeg",
+          "caption": "Produk Interior & Eksterior - Surabaya",
+          "category": "produk"
+        },
+        {
+          "id": "p11",
+          "src": "images/gallery/produk/p11.jpeg",
+          "thumb": "images/gallery/produk/p11.jpeg",
+          "caption": "Produk Interior & Eksterior - Surabaya",
+          "category": "produk"
+        },
+        {
+          "id": "p12",
+          "src": "images/gallery/produk/p12.jpeg",
+          "thumb": "images/gallery/produk/p12.jpeg",
+          "caption": "Produk Interior & Eksterior - Surabaya",
+          "category": "produk"
+        },
+        {
+          "id": "p13",
+          "src": "images/gallery/produk/p13.jpeg",
+          "thumb": "images/gallery/produk/p13.jpeg",
+          "caption": "Produk Interior & Eksterior - Surabaya",
+          "category": "produk"
+        },
+        {
+          "id": "p14",
+          "src": "images/gallery/produk/p14.jpeg",
+          "thumb": "images/gallery/produk/p14.jpeg",
+          "caption": "Produk Interior & Eksterior - Surabaya",
+          "category": "produk"
+        },
+        {
+          "id": "p15",
+          "src": "images/gallery/produk/p15.jpeg",
+          "thumb": "images/gallery/produk/p15.jpeg",
+          "caption": "Produk Interior & Eksterior - Surabaya",
           "category": "produk"
         }
       ]
