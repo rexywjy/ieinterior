@@ -88,6 +88,18 @@ input, select, textarea { font-family: inherit; }
   transform: translateY(-2px);
 }
 
+.btn-ig {
+  color: var(--white);
+  border: none;
+  background: linear-gradient(45deg, #d99a6c 0%, #c77b8b 40%, #a56a9e 70%, #7d7fb0 100%);
+  box-shadow: 0 4px 18px rgba(165,106,158,0.32);
+}
+.btn-ig:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(214,41,118,0.45);
+  filter: brightness(1.05);
+}
+
 .btn-gallery {
   background: var(--bg-alt);
   color: var(--accent-dark);
