@@ -502,7 +502,7 @@ section { padding: 88px 0; }
   background: var(--white);
   border-radius: var(--radius-lg);
   width: 100%;
-  max-width: 960px;
+  max-width: 1080px;
   max-height: 88vh;
   overflow: hidden;
   display: flex;
@@ -572,8 +572,8 @@ section { padding: 88px 0; }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
 }
 
 .gallery-item {
