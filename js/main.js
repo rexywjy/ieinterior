@@ -186,7 +186,7 @@ async function openGalleryModal(category, title) {
     const el = document.createElement('div');
     el.className = 'gallery-item';
     el.innerHTML = `
-      <img src="${item.thumb}" alt="${item.caption}" loading="lazy" />
+      <img src="${item.thumb}" alt="${item.caption}" loading="lazy" decoding="async" />
       <div class="gallery-item-overlay">
         <span class="gallery-item-caption">${item.caption}</span>
       </div>
@@ -304,7 +304,7 @@ function renderMasonry(items) {
     el.className = 'masonry-item';
     el.dataset.category = item.category;
     el.innerHTML = `
-      <img src="${item.thumb}" alt="${item.caption}" loading="lazy" />
+      <img src="${item.thumb}" alt="${item.caption}" loading="lazy" decoding="async" />
       <div class="masonry-item-overlay">
         <span class="item-tag">${data_cats[item.category] || item.category}</span>
         <span>${item.caption}</span>
