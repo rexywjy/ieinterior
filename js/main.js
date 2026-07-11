@@ -236,6 +236,7 @@ document.querySelectorAll('.btn-gallery').forEach(btn => {
 const lightbox       = document.getElementById('lightbox');
 const lightboxImg    = document.getElementById('lightboxImg');
 const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxCounter = document.getElementById('lightboxCounter');
 const lightboxClose  = document.getElementById('lightboxClose');
 const lightboxPrev   = document.getElementById('lightboxPrev');
 const lightboxNext   = document.getElementById('lightboxNext');
@@ -263,6 +264,8 @@ function showLightboxImage() {
   lightboxImg.src = item.src;
   lightboxImg.alt = title;
 
+  lightboxCounter.textContent = `${lightboxIndex + 1} dari ${currentImages.length}`;
+
   lightboxCaption.classList.remove('expanded');
   lightboxCaption.innerHTML = `
     <span class="lightbox-cap-title">${title}</span>
@@ -277,19 +280,25 @@ function showLightboxImage() {
     });
   }
 
-  lightboxPrev.style.display = lightboxIndex === 0 ? 'none' : 'flex';
-  lightboxNext.style.display = lightboxIndex === currentImages.length - 1 ? 'none' : 'flex';
+  // arrows hidden only when there's a single image; otherwise navigation wraps around
+  const many = currentImages.length > 1;
+  lightboxPrev.style.display = many ? 'flex' : 'none';
+  lightboxNext.style.display = many ? 'flex' : 'none';
 }
 
 lightboxClose.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 
 lightboxPrev.addEventListener('click', () => {
-  if (lightboxIndex > 0) { lightboxIndex--; showLightboxImage(); }
+  const n = currentImages.length;
+  lightboxIndex = (lightboxIndex - 1 + n) % n;   // wrap to last
+  showLightboxImage();
 });
 
 lightboxNext.addEventListener('click', () => {
-  if (lightboxIndex < currentImages.length - 1) { lightboxIndex++; showLightboxImage(); }
+  const n = currentImages.length;
+  lightboxIndex = (lightboxIndex + 1) % n;        // wrap to first
+  showLightboxImage();
 });
 
 document.addEventListener('keydown', e => {
