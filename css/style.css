@@ -580,25 +580,7 @@ section { padding: 88px 0; }
   transition: transform 0.4s ease;
 }
 
-.gallery-item-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(26,26,46,0.75) 0%, transparent 60%);
-  opacity: 1;
-  transition: opacity var(--transition);
-  display: flex;
-  align-items: flex-end;
-  padding: 14px;
-}
-
 .gallery-item:hover img { transform: scale(1.06); }
-.gallery-item:hover .gallery-item-overlay { opacity: 1; }
-
-.gallery-item-caption {
-  color: var(--white);
-  font-size: 0.82rem;
-  font-weight: 500;
-}
 
 .gallery-empty {
   display: flex;
@@ -651,7 +633,46 @@ section { padding: 88px 0; }
   color: rgba(255,255,255,0.7);
   font-size: 0.9rem;
   text-align: center;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
+
+.lightbox-cap-title {
+  color: var(--white);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.lightbox-cap-desc {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.lightbox-caption.expanded .lightbox-cap-desc {
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: visible;
+}
+
+.lightbox-cap-more {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+.lightbox-cap-more:hover { text-decoration: underline; }
 
 .lightbox-close,
 .lightbox-prev,
@@ -730,12 +751,12 @@ section { padding: 88px 0; }
   transition: transform 0.4s ease;
 }
 
-.masonry-item-overlay {
+.masonry-item-overlay,
+.gallery-item-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(26,26,46,0.8) 0%, transparent 55%);
+  background: linear-gradient(to top, rgba(26,26,46,0.88) 0%, rgba(26,26,46,0.35) 40%, transparent 70%);
   opacity: 1;
-  transition: opacity var(--transition);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -743,24 +764,74 @@ section { padding: 88px 0; }
 }
 
 .masonry-item:hover img { transform: scale(1.04); }
-.masonry-item:hover .masonry-item-overlay { opacity: 1; }
 
-.masonry-item-overlay span {
-  color: var(--white);
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.masonry-item-overlay .item-tag {
-  display: inline-block;
+/* Category tag — always visible, top-left */
+.masonry-item-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
   background: var(--accent);
   color: var(--white);
   font-size: 0.72rem;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: 50px;
   font-weight: 600;
-  margin-bottom: 6px;
-  width: fit-content;
+}
+
+.masonry-item-title {
+  color: var(--white);
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+/* Description clamps to 1 line until expanded */
+.masonry-item-desc {
+  color: rgba(255,255,255,0.82);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.expanded .masonry-item-desc {
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: visible;
+}
+
+/* When expanded, the overlay becomes a scrollable dark panel so long text
+   never gets clipped on short (landscape) images. */
+.masonry-item.expanded .masonry-item-overlay,
+.gallery-item.expanded .gallery-item-overlay {
+  background: rgba(20,20,36,0.95);
+  justify-content: flex-start;
+  overflow-y: auto;
+  padding-top: 44px;   /* clear the category tag at top */
+}
+
+.masonry-item-more {
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.masonry-item-more:hover { text-decoration: underline; }
+
+.load-more-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
 }
 
 .masonry-loader {

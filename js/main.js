@@ -185,13 +185,31 @@ async function openGalleryModal(category, title) {
   items.forEach((item, idx) => {
     const el = document.createElement('div');
     el.className = 'gallery-item';
+
+    const label = CATEGORY_LABELS[item.category] || item.category;
+    const title = item.title || item.caption || '';
+    const desc  = item.description || '';
+
     el.innerHTML = `
-      <img src="${item.thumb}" alt="${item.caption}" loading="lazy" decoding="async" />
+      <span class="masonry-item-tag">${label}</span>
+      <img src="${item.thumb}" alt="${title}" loading="lazy" decoding="async" />
       <div class="gallery-item-overlay">
-        <span class="gallery-item-caption">${item.caption}</span>
+        <h4 class="masonry-item-title">${title}</h4>
+        ${desc ? `<p class="masonry-item-desc">${desc}</p>
+        <button type="button" class="masonry-item-more">Selengkapnya</button>` : ''}
       </div>
     `;
     imgBlurUp(el.querySelector('img'));
+
+    const moreBtn = el.querySelector('.masonry-item-more');
+    if (moreBtn) {
+      moreBtn.addEventListener('click', e => {
+        e.stopPropagation();
+        const expanded = el.classList.toggle('expanded');
+        moreBtn.textContent = expanded ? 'Tutup' : 'Selengkapnya';
+      });
+    }
+
     el.addEventListener('click', () => openLightbox(idx, modalImages));
     galleryGrid.appendChild(el);
   });
@@ -239,9 +257,26 @@ function closeLightbox() {
 
 function showLightboxImage() {
   const item = currentImages[lightboxIndex];
-  lightboxImg.src         = item.src;
-  lightboxImg.alt         = item.caption;
-  lightboxCaption.textContent = item.caption;
+  const title = item.title || item.caption || '';
+  const desc  = item.description || '';
+
+  lightboxImg.src = item.src;
+  lightboxImg.alt = title;
+
+  lightboxCaption.classList.remove('expanded');
+  lightboxCaption.innerHTML = `
+    <span class="lightbox-cap-title">${title}</span>
+    ${desc ? `<span class="lightbox-cap-desc">${desc}</span>
+    <button type="button" class="lightbox-cap-more">Selengkapnya</button>` : ''}
+  `;
+  const moreBtn = lightboxCaption.querySelector('.lightbox-cap-more');
+  if (moreBtn) {
+    moreBtn.addEventListener('click', () => {
+      const expanded = lightboxCaption.classList.toggle('expanded');
+      moreBtn.textContent = expanded ? 'Tutup' : 'Selengkapnya';
+    });
+  }
+
   lightboxPrev.style.display = lightboxIndex === 0 ? 'none' : 'flex';
   lightboxNext.style.display = lightboxIndex === currentImages.length - 1 ? 'none' : 'flex';
 }
@@ -267,8 +302,21 @@ document.addEventListener('keydown', e => {
 // ─── Main Gallery Section (Masonry) ──────────────────────────────────────────
 const masonryGrid  = document.getElementById('masonryGrid');
 const filterBtns   = document.querySelectorAll('.filter-btn');
+const loadMoreWrap = document.getElementById('loadMoreWrap');
+const loadMoreBtn  = document.getElementById('loadMoreBtn');
 let allItems       = [];
 let currentFilter  = 'all';
+
+const CATEGORY_LABELS = {
+  renovasi: 'Bangun & Renovasi',
+  interior: 'Interior & Mebel',
+  inspeksi: 'Inspeksi Rumah',
+  produk:   'Produk'
+};
+
+const PAGE_SIZE  = 10;         // how many to show initially / per "load more"
+let currentList  = [];         // items after filtering
+let visibleCount = PAGE_SIZE;  // how many are currently shown
 
 async function loadMasonryGallery() {
   const data = await fetchGalleryData();
@@ -285,36 +333,64 @@ async function loadMasonryGallery() {
   renderMasonry(allItems);
 }
 
-function renderMasonry(items) {
+// reset=true means a fresh list (filter change) → restart at PAGE_SIZE
+function renderMasonry(items, reset = true) {
+  if (reset) { currentList = items; visibleCount = PAGE_SIZE; }
   masonryGrid.innerHTML = '';
-  if (!items.length) {
+
+  if (!currentList.length) {
     masonryGrid.innerHTML = '<p style="text-align:center;color:#6b6b6b;padding:40px">Tidak ada item ditemukan.</p>';
+    loadMoreWrap.style.display = 'none';
     return;
   }
 
-  const data_cats = {
-    renovasi: 'Bangun & Renovasi',
-    interior: 'Interior & Mebel',
-    inspeksi: 'Inspeksi Rumah',
-    produk:   'Produk'
-  };
-
-  items.forEach((item, idx) => {
-    const el = document.createElement('div');
-    el.className = 'masonry-item';
-    el.dataset.category = item.category;
-    el.innerHTML = `
-      <img src="${item.thumb}" alt="${item.caption}" loading="lazy" decoding="async" />
-      <div class="masonry-item-overlay">
-        <span class="item-tag">${data_cats[item.category] || item.category}</span>
-        <span>${item.caption}</span>
-      </div>
-    `;
-    imgBlurUp(el.querySelector('img'));
-    el.addEventListener('click', () => openLightbox(idx, items));
-    masonryGrid.appendChild(el);
+  currentList.slice(0, visibleCount).forEach((item, idx) => {
+    masonryGrid.appendChild(buildMasonryCard(item, idx));
   });
+
+  loadMoreWrap.style.display = visibleCount < currentList.length ? 'flex' : 'none';
 }
+
+function buildMasonryCard(item, idx) {
+  const el = document.createElement('div');
+  el.className = 'masonry-item';
+  el.dataset.category = item.category;
+
+  const label = CATEGORY_LABELS[item.category] || item.category;
+  const title = item.title || item.caption || '';
+  const desc  = item.description || '';
+
+  el.innerHTML = `
+    <span class="masonry-item-tag">${label}</span>
+    <img src="${item.thumb}" alt="${title}" loading="lazy" decoding="async" />
+    <div class="masonry-item-overlay">
+      <h4 class="masonry-item-title">${title}</h4>
+      ${desc ? `<p class="masonry-item-desc">${desc}</p>
+      <button type="button" class="masonry-item-more">Selengkapnya</button>` : ''}
+    </div>
+  `;
+
+  imgBlurUp(el.querySelector('img'));
+
+  // "read more" expands the description inline, without opening the lightbox
+  const moreBtn = el.querySelector('.masonry-item-more');
+  if (moreBtn) {
+    moreBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      const expanded = el.classList.toggle('expanded');
+      moreBtn.textContent = expanded ? 'Tutup' : 'Selengkapnya';
+    });
+  }
+
+  // clicking the image (anywhere except "read more") opens the lightbox
+  el.addEventListener('click', () => openLightbox(idx, currentList));
+  return el;
+}
+
+loadMoreBtn.addEventListener('click', () => {
+  visibleCount += PAGE_SIZE;
+  renderMasonry(currentList, false);
+});
 
 // Filter tabs
 filterBtns.forEach(btn => {
