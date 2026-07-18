@@ -351,23 +351,61 @@ async function loadMasonryGallery() {
   renderMasonry(shuffleArray(allItems));
 }
 
-// reset=true means a fresh list (filter change) → restart at PAGE_SIZE
-function renderMasonry(items, reset = true) {
-  if (reset) { currentList = items; visibleCount = PAGE_SIZE; }
+// Number of masonry columns follows the same breakpoints the CSS used to control via `columns`.
+function getMasonryColumnCount() {
+  const w = window.innerWidth;
+  if (w <= 480) return 1;
+  if (w <= 768) return 2;
+  if (w <= 1024) return 3;
+  return 4;
+}
+
+let masonryCols   = [];
+let renderedCount = 0; // how many items are actually appended to the DOM so far
+
+function buildMasonryColumns() {
   masonryGrid.innerHTML = '';
+  const count = getMasonryColumnCount();
+  masonryCols = Array.from({ length: count }, () => {
+    const col = document.createElement('div');
+    col.className = 'masonry-col';
+    masonryGrid.appendChild(col);
+    return col;
+  });
+}
+
+// reset=true means a fresh list (filter change) → restart at PAGE_SIZE and rebuild columns.
+// reset=false ("load more") only appends the newly-visible items to existing columns,
+// so previously rendered items never move/reshuffle.
+function renderMasonry(items, reset = true) {
+  const prevVisible = reset ? 0 : renderedCount;
+  if (reset) { currentList = items; visibleCount = PAGE_SIZE; }
 
   if (!currentList.length) {
     masonryGrid.innerHTML = '<p style="text-align:center;color:#6b6b6b;padding:40px">Tidak ada item ditemukan.</p>';
     loadMoreWrap.style.display = 'none';
+    renderedCount = 0;
     return;
   }
 
-  currentList.slice(0, visibleCount).forEach((item, idx) => {
-    masonryGrid.appendChild(buildMasonryCard(item, idx));
-  });
+  if (reset || !masonryCols.length) buildMasonryColumns();
 
-  loadMoreWrap.style.display = visibleCount < currentList.length ? 'flex' : 'none';
+  currentList.slice(prevVisible, visibleCount).forEach((item, i) => {
+    const idx = prevVisible + i;
+    const col = masonryCols[idx % masonryCols.length];
+    col.appendChild(buildMasonryCard(item, idx));
+  });
+  renderedCount = Math.min(visibleCount, currentList.length);
+
+  loadMoreWrap.style.display = renderedCount < currentList.length ? 'flex' : 'none';
 }
+
+window.addEventListener('resize', () => {
+  clearTimeout(window._masonryResizeT);
+  window._masonryResizeT = setTimeout(() => {
+    if (getMasonryColumnCount() !== masonryCols.length) renderMasonry(currentList, true);
+  }, 200);
+});
 
 function buildMasonryCard(item, idx) {
   const el = document.createElement('div');
