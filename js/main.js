@@ -226,7 +226,7 @@ galleryModal.addEventListener('click', e => {
 });
 
 // Attach open buttons (Layanan cards)
-document.querySelectorAll('.btn-gallery').forEach(btn => {
+document.querySelectorAll('.btn-gallery[data-category]').forEach(btn => {
   btn.addEventListener('click', () => {
     openGalleryModal(btn.dataset.category, btn.dataset.title);
   });
