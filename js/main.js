@@ -327,6 +327,15 @@ const PAGE_SIZE  = 10;         // how many to show initially / per "load more"
 let currentList  = [];         // items after filtering
 let visibleCount = PAGE_SIZE;  // how many are currently shown
 
+function shuffleArray(arr) {
+  const result = [...arr];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
 async function loadMasonryGallery() {
   const data = await fetchGalleryData();
   if (!data) {
@@ -339,7 +348,7 @@ async function loadMasonryGallery() {
     cat.items.forEach(item => allItems.push(item));
   });
 
-  renderMasonry(allItems);
+  renderMasonry(shuffleArray(allItems));
 }
 
 // reset=true means a fresh list (filter change) → restart at PAGE_SIZE
@@ -409,7 +418,7 @@ filterBtns.forEach(btn => {
     currentFilter = btn.dataset.filter;
 
     const filtered = currentFilter === 'all'
-      ? allItems
+      ? shuffleArray(allItems)
       : allItems.filter(item => item.category === currentFilter);
 
     renderMasonry(filtered);
