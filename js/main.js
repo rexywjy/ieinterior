@@ -517,7 +517,7 @@ function validateForm() {
     hpErr.textContent = 'Nomor WhatsApp tidak boleh kosong.';
     hp.classList.add('error');
     valid = false;
-  } else if (!/^(08|\+628|628)\d{8,12}$/.test(hpVal)) {
+  } else if (!/^(08|\+628|628)\d{8,13}$/.test(hpVal)) {
     hpErr.textContent = 'Format nomor tidak valid (contoh: 08xxxxxxxxxx).';
     hp.classList.add('error');
     valid = false;
@@ -552,7 +552,7 @@ kontakForm.addEventListener('submit', e => {
     pesan
   ].filter(l => l !== undefined).join('\n');
 
-  const waURL = `https://wa.me/6289699639763?text=${encodeURIComponent(msg)}`;
+  const waURL = `https://wa.me/62882021423164?text=${encodeURIComponent(msg)}`;
 
   // Button loading state
   submitBtn.disabled = true;
